@@ -1,0 +1,11 @@
+version: '3'
+services:
+  site:
+    build: site
+    container_name: apache-captcha
+    ports :
+     - "7000:80"
+    volumes:
+     - ./www:/var/www/html/
+     - ./apache2config/000-default.conf:/etc/apache2/sites-available/000-default.conf
+     - ./apache2config/apache2.conf:/etc/apache2/apache2.conf
